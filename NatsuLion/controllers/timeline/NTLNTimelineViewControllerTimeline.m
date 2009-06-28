@@ -2,6 +2,9 @@
 #import "NTLNConfiguration.h"
 #import "NTLNRateLimit.h"
 
+#import "VOQueue.h"
+#import "VOMessageFormatter.h"
+
 @implementation NTLNTimelineViewController(Timeline)
 
 - (void)timeline:(NTLNTimeline*)timeline requestForPage:(int)page since_id:(NSString*)since_id {
@@ -21,6 +24,12 @@
 }
 
 - (void)timeline:(NTLNTimeline*)tl clientSucceeded:(NTLNTwitterClient*)client insertedStatuses:(NSArray*)statuses {
+	
+	for(int i = [statuses count] - 1; i >= 0; -- i) {
+		[[VOQueue sharedInstance] addQueue:[[(NTLNStatus*)[statuses objectAtIndex:i] message] voFormat]];
+	}
+	
+	
 	[self removeNowloadingView];
 	
 	int count = statuses.count;
