@@ -67,6 +67,11 @@
 				   nil];
 
 	NSArray *g5 = [NSArray arrayWithObjects:
+					[UICPrototypeTableCell cellForSwitch:@"UseInsomnia" 
+									 withUserDefaultsKey:NTLN_PREFERENCE_USE_INSOMNIA],
+				   nil];
+
+	NSArray *g6 = [NSArray arrayWithObjects:
 				   [UICPrototypeTableCell cellForTitle:@"About NatsuLion for iPhone"],
 				   nil];
 	
@@ -76,6 +81,7 @@
 			   [UICPrototypeTableGroup groupWithCells:g3 withTitle:nil], 
 			   [UICPrototypeTableGroup groupWithCells:g4 withTitle:nil], 
 			   [UICPrototypeTableGroup groupWithCells:g5 withTitle:nil], 
+			   [UICPrototypeTableGroup groupWithCells:g6 withTitle:nil], 
 			   nil] retain];
 }
 

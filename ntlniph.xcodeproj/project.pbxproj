@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		351B7B621023322A0075187C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351B7B611023322A0075187C /* IOKit.framework */; };
 		8D1EF37B0FA6C46200BD452F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */; };
 		8D3576F30E65D90E00A22D11 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3576F20E65D90E00A22D11 /* Default.png */; };
 		8D3C40150F8FC26300E69E26 /* more_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C40130F8FC26300E69E26 /* more_button_normal.png */; };
@@ -181,6 +182,7 @@
 		1D6058910D05DD3D006BFB54 /* ntlniph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ntlniph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ntlniph_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ntlniph_Prefix.pch; path = ../../ntlniph_Prefix.pch; sourceTree = "<group>"; };
+		351B7B611023322A0075187C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		8D3576F20E65D90E00A22D11 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		A47347880FF45A7C00BC718B /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
 		A47347890FF45A7C00BC718B /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
 		A47348750FF5F32600BC718B /* VoiceServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VoiceServices.framework; path = System/Library/PrivateFrameworks/VoiceServices.framework; sourceTree = SDKROOT; };
+		A4D8121710392B6F0013BFB3 /* twitter_apikeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twitter_apikeys.h; sourceTree = "<group>"; };
 		F13E2B370FB806C50086B0E7 /* readme.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = readme.html; path = resources/readme.html; sourceTree = "<group>"; };
 		F1474EF10FD3F457007D9F4C /* NTLNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppDelegate.h; sourceTree = "<group>"; };
 		F1474EF20FD3F457007D9F4C /* NTLNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAppDelegate.m; sourceTree = "<group>"; };
@@ -462,6 +465,7 @@
 				8DBA55A80E96A9F700109F5D /* AudioToolbox.framework in Frameworks */,
 				8D1EF37B0FA6C46200BD452F /* libxml2.2.dylib in Frameworks */,
 				A47348760FF5F32600BC718B /* VoiceServices.framework in Frameworks */,
+				351B7B621023322A0075187C /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +483,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A4D8121710392B6F0013BFB3 /* twitter_apikeys.h */,
 				A47347820FF4569D00BC718B /* VOQueue */,
 				A47347690FF455EB00BC718B /* twitter_apikeys.h */,
 				F1474EEF0FD3F457007D9F4C /* NatsuLion */,
@@ -506,6 +511,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				351B7B611023322A0075187C /* IOKit.framework */,
 				A47348750FF5F32600BC718B /* VoiceServices.framework */,
 				8D1EF37A0FA6C46200BD452F /* libxml2.2.dylib */,
 				F17419A80E2A45AF008BA863 /* CoreGraphics.framework */,
@@ -1372,8 +1378,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1381,12 +1387,16 @@
 				HEADER_SEARCH_PATHS = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "-I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2";
+				OTHER_CFLAGS = (
+					"-I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2",
+					"-F/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = NatsuLiphoon;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1400,6 +1410,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2;
+				OTHER_CFLAGS = (
+					"-I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk/usr/include/libxml2",
+					"-F/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = NatsuLiphoon;
 				PROVISIONING_PROFILE = "";

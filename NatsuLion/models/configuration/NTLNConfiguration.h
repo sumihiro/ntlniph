@@ -9,6 +9,7 @@
 	int fetchCount;
 	BOOL shakeToFullscreen;
 	BOOL lefthand;
+	BOOL useInsomnia;
 }
 
 @property (readonly) BOOL useSafari;
@@ -17,6 +18,7 @@
 @property (readonly) BOOL showMoreTweetMode;
 @property (readonly) BOOL shakeToFullscreen;
 @property (readonly) BOOL lefthand;
+@property (readonly) BOOL useInsomnia;
 
 + (id) instance;
 - (void)reload;

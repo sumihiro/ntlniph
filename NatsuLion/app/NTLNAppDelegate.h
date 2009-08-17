@@ -2,6 +2,15 @@
 
 #import "NTLNCacheCleaner.h"
 
+#include <mach/mach_port.h>
+#include <mach/mach_interface.h>
+#include <mach/mach_init.h>
+#import <UIKit/UIKit.h>
+#import <IOKit/pwr_mgt/IOPMLib.h>
+#import <IOKit/IOMessage.h>
+
+io_connect_t    root_port;
+
 @class NTLNBrowserViewController;
 @class NTLNFriendsViewController;
 @class NTLNMentionsViewController;

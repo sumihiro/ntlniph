@@ -2,6 +2,7 @@
 #import "NTLNConfiguration.h"
 #import "NTLNColors.h"
 #import "NTLNAppDelegate.h"
+#import "VOQueue.h"
 
 @interface NTLNTimelineViewController(Private)
 - (UIView*)moreTweetView;
@@ -104,6 +105,7 @@
 }
 
 - (void)clearButton:(id)sender {
+	[[VOQueue sharedInstance] clearQueue];
 	[timeline markAllAsRead];
 	[super.tableView reloadData];
 	[self updateBadge];

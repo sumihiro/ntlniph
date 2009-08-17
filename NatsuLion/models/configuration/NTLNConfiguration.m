@@ -5,7 +5,7 @@
 
 @implementation NTLNConfiguration
 
-@synthesize useSafari, darkColorTheme, autoScroll, showMoreTweetMode, shakeToFullscreen;
+@synthesize useSafari, darkColorTheme, autoScroll, showMoreTweetMode, shakeToFullscreen, useInsomnia;
 @synthesize lefthand;
 
 static id _instance = nil;
@@ -39,6 +39,7 @@ static id _instance = nil;
 	fetchCount = [[NSUserDefaults standardUserDefaults] integerForKey:NTLN_PREFERENCE_FETCH_COUNT];
 	shakeToFullscreen = [[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_SHAKE_TO_FULLSCREEN];
 	lefthand = [[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_LEFTHAND];
+	useInsomnia = [[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_USE_INSOMNIA];
 }
 
 static int seconds_from_index(int index)

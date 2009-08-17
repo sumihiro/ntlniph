@@ -12,6 +12,8 @@
 
 #define NTLN_PREFERENCE_FOOTER					@"footer"
 
+#define NTLN_PREFERENCE_USE_INSOMNIA			@"useInsomnia"
+
 #define NTLN_PREFERENCE_LEFTHAND				@"lefthand"
 
 #define NTLN_OAUTH_PROVIDER						@"twitter.com"

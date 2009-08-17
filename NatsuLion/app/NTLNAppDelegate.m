@@ -16,6 +16,7 @@
 #import "OAToken.h"
 #import "NTLNConfigurationKeys.h"
 #import "NTLNTwitterAccountViewController.h"
+#import "NTLNConfiguration.h"
 
 @implementation NTLNAppDelegate
 
@@ -24,6 +25,32 @@
 @synthesize applicationActive;
 
 #define NTLN_PREFERENCE_TABORDER		@"tabItemTitlesForTabOrder"
+
+void callback(void * x,io_service_t y,natural_t messageType,void * messageArgument)
+{
+    NSLog(@"messageType %08lx, arg %08lx\n",(long unsigned int)messageType, (long unsigned int)messageArgument);
+	
+    switch ( messageType ) {
+		case kIOMessageSystemWillSleep:
+			NSLog(@"kIOMessageSystemWillSleep");
+			IOAllowPowerChange(root_port,(long)messageArgument);
+			break;
+		case kIOMessageCanSystemSleep:
+			NSLog(@"kIOMessageCanSystemSleep");
+			if([[NTLNConfiguration instance] useInsomnia]) {
+				NSLog(@"IOCancelPowerChange");
+				IOCancelPowerChange(root_port,(long)messageArgument);
+			}
+			else {
+				NSLog(@"IOAllowPowerChange");
+				IOAllowPowerChange(root_port,(long)messageArgument);
+			}
+			break;
+		case kIOMessageSystemHasPoweredOn:
+			NSLog(@"kIOMessageSystemHasPoweredOn");
+			break;
+    }
+}
 
 - (void)setTabOrderIfSaved {
 	NSArray *tabItemTitles = [[NSUserDefaults standardUserDefaults] arrayForKey:NTLN_PREFERENCE_TABORDER];
@@ -150,11 +177,23 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	NTLNCacheCleaner *cc = [NTLNCacheCleaner sharedCacheCleaner];
+
 	cc.delegate = self;
 	BOOL alertShown = [cc bootup];
 	if (!alertShown) {
 		[self startup];
 	}
+
+	IONotificationPortRef   notify;
+    io_object_t             anIterator;
+	root_port = IORegisterForSystemPower (0,&notify,callback,&anIterator);
+    if ( root_port == NULL ) {
+		NSLog(@"IORegisterForSystemPower failed\n");
+		return;
+    }
+	CFRunLoopAddSource(CFRunLoopGetCurrent(),
+					   IONotificationPortGetRunLoopSource(notify),
+					   kCFRunLoopDefaultMode);	
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
